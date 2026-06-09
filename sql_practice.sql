@@ -1,0 +1,47 @@
+CREATE TABLE dersler (
+    id SERIAL PRIMARY KEY,
+    ogrenci_id INT,
+    ders_adi VARCHAR(50)
+);
+INSERT INTO dersler (ogrenci_id, ders_adi)
+VALUES
+(1, 'Matematik'),
+(2, 'Fizik'),
+(3, 'Kimya');
+SELECT * 
+FROM information_schema.tables
+WHERE table_name = 'dersler';
+SELECT
+    o.id,
+    o.ad,
+    o.soyad,
+    d.ders_adi
+FROM ogrenciler o
+INNER JOIN dersler d
+ON o.id = d.ogrenci_id;
+INSERT INTO ogrenciler (ad, soyad)
+VALUES ('Zehra', 'Kaya');
+
+SELECT
+    o.id,
+    o.ad,
+    o.soyad,
+    d.ders_adi
+FROM ogrenciler o
+LEFT JOIN dersler d
+ON o.id = d.ogrenci_id;
+SELECT ad
+FROM ogrenciler
+
+UNION
+
+SELECT ders_adi
+FROM dersler;
+CREATE table kullanicilar (
+id SERIAL PRIMARY KEY,
+email VARCHAR(100) UNIQUE
+) ;
+INSERT INTO kullanicilar (email)
+VALUES ('cemre@gmail.com');
+CREATE INDEX idx_ogrenci_ad
+ON ogrenciler(ad);
