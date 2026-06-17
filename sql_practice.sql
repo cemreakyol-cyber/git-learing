@@ -30,13 +30,7 @@ SELECT
 FROM ogrenciler o
 LEFT JOIN dersler d
 ON o.id = d.ogrenci_id;
-SELECT ad
-FROM ogrenciler
 
-
-
-SELECT ders_adi
-FROM dersler;
 CREATE table kullanicilar (
 id SERIAL PRIMARY KEY,
 email VARCHAR(100) UNIQUE
