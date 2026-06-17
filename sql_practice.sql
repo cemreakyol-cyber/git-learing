@@ -33,7 +33,7 @@ ON o.id = d.ogrenci_id;
 SELECT ad
 FROM ogrenciler
 
-UNION
+
 
 SELECT ders_adi
 FROM dersler;
